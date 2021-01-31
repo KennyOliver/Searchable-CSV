@@ -41,7 +41,7 @@ def read_customers ():
   deposit  = 6
   
   #FILTER MECHANISM so that individual columns of the CSV are searched
-  searchCategory = str(input("Enter filter to apply\n  • Forename\n  • Surname\n  • Gender\n  • Age\n  • Country (ie. Current Country)\n  • Vehicle\n  • Deposit\nCommands\n  • /all\n  • /settings (BROKEN)\n——> ")).lower()
+  searchCategory = str(input("Enter filter to apply\n  • Forename\n  • Surname\n  • Gender\n  • Age\n  • Country (ie. Current Country)\n  • Vehicle\n  • Deposit\nCommands\n  • /all\n  • /settings (BROKEN!)\n——> ")).lower()
   #Search Categories
   if searchCategory == 'forename':
       category = forename
@@ -99,8 +99,10 @@ def read_customers ():
     searchRequest = input("Enter the " + searchCategory + " [10] [20] [30] [40] [50] [60] [70] [80]\n——> ")
   elif searchCategory == 'gender':
     searchRequest = input("Enter the " + searchCategory + " [M] [F] [?]\n——> ")
+  elif searchCategory == 'country':
+    searchRequest = input("Enter the " + searchCategory + " [Australia] [Canada] [England] [New Zealand]\n——> ")
   elif searchCategory == 'deposit':
-    searchRequest = input("Enter the " + searchCategory + " size\n[TINY] [SMALL] [MEDIUM] [LARGE]\n——> ")
+    searchRequest = input("Enter the " + searchCategory + " size\n[TINY] [SMALL] [MEDIUM] [LARGE]\n——> ").upper()
   elif searchCategory == '/all' or searchCategory == '/ALL':
     searchRequest = 'PRINT_ALL'
   elif searchCategory == '/settings' or searchCategory == '/SETTINGS':
@@ -210,7 +212,7 @@ def read_customers ():
 #main program
 read_customers()
 
-#A program that I found from stack exchange (the only code which I copied!!!) that helped me to construct the search mechanism -- I was extremely confused/stuck when my program would only work for the first record. The main fix was that the massive if chains were in the wrong order, and minor shuffling + setting the temporary false values (as commented earlier) helped to make this program function :)
+#Found from stack exchange (the only code which I copied!!!) that helped me to construct the search mechanism -- I was extremely confused/stuck when my program would only work for the first record. The main fix was that the massive if chains were in the wrong order, and minor shuffling + setting the temporary false values (as commented earlier) helped to make this program function :)
 '''#loop through csv list
 for row in csv_file:
     #if current rows 2nd value is equal to input, print that row
