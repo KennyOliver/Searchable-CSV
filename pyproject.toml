@@ -6,7 +6,7 @@ requires = ["poetry>=0.12"]
 [tool.poetry]
 authors = ["Your Name <you@example.com>"]
 description = ""
-name = "csv-with-search-capability"
+name = "csv-with-search-capability-2"
 version = "0.1.0"
 [tool.poetry.dependencies]
 colorama = "^0.4.3"
