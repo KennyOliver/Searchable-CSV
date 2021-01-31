@@ -41,7 +41,7 @@ def read_customers ():
   deposit  = 6
   
   #FILTER MECHANISM so that individual columns of the CSV are searched
-  searchCategory = str(input("Enter filter to apply\n  • Forename\n  • Surname\n  • Gender\n  • Age\n  • Country (ie. Current Country)\n  • Vehicle\n  • Deposit\nCommands\n  • /all\n  • /settings\n——> ")).lower()
+  searchCategory = str(input("Enter filter to apply\n  • Forename\n  • Surname\n  • Gender\n  • Age\n  • Country (ie. Current Country)\n  • Vehicle\n  • Deposit\nCommands\n  • /all\n  • /settings (BROKEN)\n——> ")).lower()
   #Search Categories
   if searchCategory == 'forename':
       category = forename
@@ -108,6 +108,7 @@ def read_customers ():
   else:
     searchRequest = str(input("Enter the " + searchCategory + "\n——> "))
 
+
   if searchRequest == 'm' or searchRequest == 'male':
     searchRequest = 'M'
   elif searchRequest == 'f' or searchRequest == 'female':
@@ -121,6 +122,9 @@ def read_customers ():
     searchRequest == 'England'
   elif searchRequest == 'new zealand':
     searchRequest == 'New Zealand'
+  
+  if searchRequest == 'bicycle':
+    searchRequest = 'bike'
   
   if searchRequest == 'tiny' or searchRequest == 't' or searchRequest == 'T':
     searchRequest == 'TINY'
@@ -167,14 +171,19 @@ def read_customers ():
         print("COUNT is currently "+Fore.GREEN,Style.BRIGHT,"ON",Style.RESET_ALL)
       elif COUNTstate == False:
         print("COUNT is currently "+Fore.RED,Style.BRIGHT,"OFF",Style.RESET_ALL)
+
       print("Turn COUNT "+Fore.GREEN,"ON",Style.RESET_ALL+" or "+Fore.RED,"OFF",Style.RESET_ALL)
-      toggleCOUNT = str(input("Enter ON (1) or OFF (0)\n——> ")).upper()
+      toggleCOUNT = bool(input("Enter ON (1) or OFF (0)\n——> "))
+
       if toggleCOUNT == 'OFF' or '0':
         RECORD = forename+'|'+surname+'|'+gender+'|' +age+'+'+'|'+currentCountry+'|'+vehicle+'|'+DEPOSIT+':'+str(roundDeposit)+'('+'£'+deposit+')'
         COUNTstate = False
-      else:
+      elif toggleCOUNT == 'ON' or '1':
         RECORD = str(COUNT)+'> '+forename+'|'+surname+'|'+gender+'|' +age+'+'+'|'+currentCountry+'|'+vehicle+'|'+DEPOSIT+':'+str(roundDeposit)+'('+'£'+deposit+')'
         COUNTstate = True
+      else:
+        None
+
       new_section()
     elif searchRequest == forename:
       print(Fore.CYAN,RECORD,Fore.WHITE)
@@ -194,14 +203,14 @@ def read_customers ():
       print(Fore.CYAN,RECORD,Fore.WHITE)
       #if DEPOSIT == searchRequest:
       #  print(Fore.CYAN,RECORD,Fore.WHITE)
-    #This is in order to continue the function of the program by forcing the user to give a proper value. HOWEVER, for some unknown reason, the program only prints out some/certain records??? I instead built a procedure which reruns the program; which seems to work best!
+    #This continues the program by forcing the user to give a proper value. HOWEVER, for some unknown reason, the program only prints out some/certain records??? A procedure which reruns the program seems to work best!
     '''else:
       searchRequest = str(input("Enter the " + searchCategory + "\n——> "))'''
   rerun()
 #main program
 read_customers()
 
-#A program that I found from stack exchange (the only code which I copied!!!) that helped me to construct the search mechanism -- I was extremely confused/stuck when myh program would only work for the first record. The main fix was that the massive if chains were in the wrong order, and minor shuffling + setting the temporary false values (as commented earlier) helped to make this program function :)
+#A program that I found from stack exchange (the only code which I copied!!!) that helped me to construct the search mechanism -- I was extremely confused/stuck when my program would only work for the first record. The main fix was that the massive if chains were in the wrong order, and minor shuffling + setting the temporary false values (as commented earlier) helped to make this program function :)
 '''#loop through csv list
 for row in csv_file:
     #if current rows 2nd value is equal to input, print that row
