@@ -13,18 +13,18 @@ def rerun ():
   if ask == 'Y':
     print("\n")
     time.sleep(1)
-    read_customers()
+    search_customers()
   else:
     None'''
   new_section ()
-  read_customers ()
+  search_customers ()
 
 #prints a pattern to make UI split into sections
 def new_section ():
   print(Fore.WHITE,Style.BRIGHT,">--------------------<\n",Style.RESET_ALL)
 
 #main program
-def read_customers ():
+def search_customers():
   #opens the CSV file
   CUSTOMERS = open('database_customers.csv','r')
   reader = csv.reader(CUSTOMERS)
@@ -210,7 +210,7 @@ def read_customers ():
       searchRequest = str(input("Enter the " + searchCategory + "\n——> "))'''
   rerun()
 #main program
-read_customers()
+'''search_customers()'''
 
 #Found from stack exchange (the only code which I copied!!!) that helped me to construct the search mechanism -- I was extremely confused/stuck when my program would only work for the first record. The main fix was that the massive if chains were in the wrong order, and minor shuffling + setting the temporary false values (as commented earlier) helped to make this program function :)
 '''#loop through csv list
@@ -223,3 +223,14 @@ for row in csv_file:
 #This program took a long time to make (about 4/5 hrs even though it looks simple! - Kenny  Oliver Sat 28th March 2020 at 17:58)
 
 # ©Kenny 2020
+
+def input_data():
+  database_file = open("database_customers.csv", 'a')
+  reader = csv.reader(database_file)
+  
+  inputRecord = str(input("Enter record in this format:\nForename, Surname, Gender, Age, Current Country, Vehicle, Deposit\n• Commas must be used! •\n--> "))
+  inputRecord.split(", ")
+  forename, surname, gender, age, currentCountry, vehicle, deposit = inputRecord[0], inputRecord[1], inputRecord[2], inputRecord[3], inputRecord[4], inputRecord[5], inputRecord[6]
+  #database_file.write(forename, surname, gender, age, currentCountry, vehicle, deposit)
+  database_file.write("\n" + inputRecord)
+  database_file.close()
