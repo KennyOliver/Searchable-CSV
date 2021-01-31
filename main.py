@@ -8,7 +8,7 @@ print("| 𝙸𝚗𝚜𝚞𝚛𝚊𝚗𝚌𝚎 𝙲𝚘𝚖𝚙𝚊𝚗𝚢 𝙳�
 print("¯" * 30 + "\n\n",Style.RESET_ALL)
 
 #re-runs the program
-def rerun():
+def rerun ():
   '''ask = input("\nSearch for more?\nY or N\n--> ").upper()
   if ask == 'Y':
     print("\n")
@@ -16,11 +16,11 @@ def rerun():
     read_customers()
   else:
     None'''
-  new_section()
-  read_customers()
+  new_section ()
+  read_customers ()
 
 #prints a pattern to make UI split into sections
-def new_section():
+def new_section ():
   print(Fore.WHITE,Style.BRIGHT,">--------------------<\n",Style.RESET_ALL)
 
 #main program
@@ -41,7 +41,8 @@ def read_customers ():
   deposit  = 6
   
   #FILTER MECHANISM so that individual columns of the CSV are searched
-  searchCategory = str(input("Enter filter to apply\n  • Forename\n  • Surname\n  • Gender\n  • Age\n  • Country (ie. Current Country)\n  • Vehicle\n  • Deposit\n——> ")).lower()
+  searchCategory = str(input("Enter filter to apply\n  • Forename\n  • Surname\n  • Gender\n  • Age\n  • Country (ie. Current Country)\n  • Vehicle\n  • Deposit\nCommands\n  • /all\n  • /settings\n——> ")).lower()
+  #Search Categories
   if searchCategory == 'forename':
       category = forename
       print(Fore.GREEN,Style.BRIGHT,"\nFORENAME category applied.",Style.RESET_ALL)
@@ -94,9 +95,12 @@ def read_customers ():
       searchCategory = str(input("Please, enter filter to apply\n——> ")).lower()
   
   if searchCategory == 'age':
-    searchRequest = str(input("Enter the " + searchCategory + ' ' + CategoryString + "\n——> "))
+    '''searchRequest = str(input("Enter the " + searchCategory + ' ' + CategoryString + "\n——> "))'''
+    searchRequest = input("Enter the " + searchCategory + " [10] [20] [30] [40] [50] [60] [70] [80]\n——> ")
+  elif searchCategory == 'gender':
+    searchRequest = input("Enter the " + searchCategory + " [M] [F] [?]\n——> ")
   elif searchCategory == 'deposit':
-    searchRequest = input("Enter the " + searchCategory + "\n——> ")
+    searchRequest = input("Enter the " + searchCategory + " size\n[TINY] [SMALL] [MEDIUM] [LARGE]\n——> ")
   elif searchCategory == '/all' or searchCategory == '/ALL':
     searchRequest = 'PRINT_ALL'
   elif searchCategory == '/settings' or searchCategory == '/SETTINGS':
@@ -111,6 +115,8 @@ def read_customers ():
   
   if searchRequest == 'australia':
     searchRequest == 'Australia'
+  elif searchRequest == 'canada':
+    searchRequest == 'Canada'
   elif searchRequest == 'england':
     searchRequest == 'England'
   elif searchRequest == 'new zealand':
@@ -204,3 +210,5 @@ for row in csv_file:
 
 
 #This program took a long time to make (about 4/5 hrs even though it looks simple! - Kenny  Oliver Sat 28th March 2020 at 17:58)
+
+# ©Kenny 2020
