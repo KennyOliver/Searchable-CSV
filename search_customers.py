@@ -71,7 +71,7 @@ def search_customers():
       searchCategory = str(input("Please, enter filter to apply\n——> ")).lower()
   
   if searchCategory == 'age':
-    '''searchRequest = str(input("Enter the " + searchCategory + ' ' + CategoryString + "\n——> "))'''
+    '''searchRequest = input("Enter the " + searchCategory + ' ' + CategoryString + "\n——> ")'''
     searchRequest = input("Enter the " + searchCategory + " [10] [20] [30] [40] [50] [60] [70] [80]\n——> ")
   elif searchCategory == 'gender':
     searchRequest = input("Enter the " + searchCategory + " [M] [F] [?]\n——> ")
@@ -84,7 +84,7 @@ def search_customers():
   elif searchCategory == '/settings' or searchCategory == '/SETTINGS':
     searchRequest = 'SETTINGS'
   else:
-    searchRequest = str(input("Enter the " + searchCategory + "\n——> "))
+    searchRequest = input("Enter the " + searchCategory + "\n——> ")
 
 
   if searchRequest == 'm' or searchRequest == 'male':
@@ -183,5 +183,5 @@ def search_customers():
       #  print(Fore.CYAN,RECORD,Fore.WHITE)
     #This continues the program by forcing the user to give a proper value. HOWEVER, for some unknown reason, the program only prints out some/certain records??? A procedure which reruns the program seems to work best!
     '''else:
-      searchRequest = str(input("Enter the " + searchCategory + "\n——> "))'''
+      searchRequest = input("Enter the " + searchCategory + "\n——> ")'''
   rerun()
