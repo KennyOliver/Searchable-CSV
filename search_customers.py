@@ -1,5 +1,3 @@
-impo
-
 def search_customers():
   #opens the CSV file
   CUSTOMERS = open('database_customers.csv','r')
@@ -93,25 +91,25 @@ def search_customers():
     searchRequest = 'F'
   
   if searchRequest == 'australia':
-    searchRequest == 'Australia'
+    searchRequest = 'Australia'
   elif searchRequest == 'canada':
-    searchRequest == 'Canada'
+    searchRequest = 'Canada'
   elif searchRequest == 'england':
-    searchRequest == 'England'
+    searchRequest = 'England'
   elif searchRequest == 'new zealand':
-    searchRequest == 'New Zealand'
+    searchRequest = 'New Zealand'
   
   if searchRequest == 'bicycle':
     searchRequest = 'bike'
   
   if searchRequest == 'tiny' or searchRequest == 't' or searchRequest == 'T':
-    searchRequest == 'TINY'
+    searchRequest = 'TINY'
   elif searchRequest == 'small' or searchRequest == 's' or searchRequest == 'S':
-    searchRequest == 'SMALL'
+    searchRequest = 'SMALL'
   elif searchRequest == 'medium' or searchRequest == 'm' or searchRequest == 'M':
-    searchRequest == 'MEDIUM'
+    searchRequest = 'MEDIUM'
   elif searchRequest == 'large' or searchRequest == 'l' or searchRequest == 'L':
-    searchRequest == 'LARGE'
+    searchRequest = 'LARGE'
 
   COUNT = 0
 
@@ -159,8 +157,6 @@ def search_customers():
       elif toggleCOUNT == 'ON' or '1':
         RECORD = str(COUNT)+'> '+forename+'|'+surname+'|'+gender+'|' +age+'+'+'|'+currentCountry+'|'+vehicle+'|'+DEPOSIT+':'+str(roundDeposit)+'('+'£'+deposit+')'
         COUNTstate = True
-      else:
-        None
 
       new_section()
     elif searchRequest == forename:
