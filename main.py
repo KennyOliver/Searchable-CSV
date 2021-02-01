@@ -37,7 +37,6 @@ def choose_task():
   elif ask == '2':
     input_data()
   else:
-    None
-  choose_task
+    choose_task()
 
 choose_task()
