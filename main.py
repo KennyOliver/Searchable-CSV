@@ -1,4 +1,7 @@
-import csv,time,colorama,random
+import csv
+import time
+import colorama
+import random
 from colorama import Fore,Style
 #import libraries
 #import search_customers, input_data
@@ -27,8 +30,6 @@ def rerun ():
 def new_section ():
   print(Fore.WHITE,Style.BRIGHT,">--------------------<\n",Style.RESET_ALL)
 
-#main program
-'''search_customers()'''
 
 def choose_task():
   ask = input("Choose:\n[1] Search database\n[2] Enter Data\n--> ")
