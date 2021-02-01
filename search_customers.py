@@ -82,7 +82,7 @@ def search_customers():
   elif searchCategory == '/settings' or searchCategory == '/SETTINGS':
     searchRequest = 'SETTINGS'
   else:
-    searchRequest = str(input("Enter the " + searchCategory + "\n——> "))
+    searchRequest = input("Enter the " + searchCategory + "\n——> ")
 
 
   if searchRequest == 'm' or searchRequest == 'male':
