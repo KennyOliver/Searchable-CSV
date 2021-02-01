@@ -69,7 +69,7 @@ def search_customers():
       searchCategory = str(input("Please, enter filter to apply\n——> ")).lower()
   
   if searchCategory == 'age':
-    '''searchRequest = str(input("Enter the " + searchCategory + ' ' + CategoryString + "\n——> "))'''
+    '''searchRequest = input("Enter the " + searchCategory + ' ' + CategoryString + "\n——> ")'''
     searchRequest = input("Enter the " + searchCategory + " [10] [20] [30] [40] [50] [60] [70] [80]\n——> ")
   elif searchCategory == 'gender':
     searchRequest = input("Enter the " + searchCategory + " [M] [F] [?]\n——> ")
@@ -143,9 +143,9 @@ def search_customers():
     RECORD = str(COUNT)+'> '+forename+'|'+surname+'|'+gender+'|' +age+'+'+'|'+currentCountry+'|'+vehicle+'|'+DEPOSIT+':'+str(roundDeposit)+'('+'£'+deposit+')'
 
     if searchRequest == 'SETTINGS':
-      if COUNTstate == True:
+      if COUNTstate is True:
         print("COUNT is currently "+Fore.GREEN,Style.BRIGHT,"ON",Style.RESET_ALL)
-      elif COUNTstate == False:
+      elif COUNTstate is False:
         print("COUNT is currently "+Fore.RED,Style.BRIGHT,"OFF",Style.RESET_ALL)
 
       print("Turn COUNT "+Fore.GREEN,"ON",Style.RESET_ALL+" or "+Fore.RED,"OFF",Style.RESET_ALL)
@@ -179,5 +179,5 @@ def search_customers():
       #  print(Fore.CYAN,RECORD,Fore.WHITE)
     #This continues the program by forcing the user to give a proper value. HOWEVER, for some unknown reason, the program only prints out some/certain records??? A procedure which reruns the program seems to work best!
     '''else:
-      searchRequest = str(input("Enter the " + searchCategory + "\n——> "))'''
+      searchRequest = input("Enter the " + searchCategory + "\n——> ")'''
   rerun()
