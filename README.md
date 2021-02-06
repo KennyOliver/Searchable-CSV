@@ -1,4 +1,7 @@
 # Searchable-CSV
+
+![image](https://www.codefactor.io/repository/github/KennyOliver/searchable-csv/badge)
+
 A Python program that can search through a CSV database file!
 
-Kenneth Oliver ©2021
+Kenny Oliver ©2021
