@@ -1,3 +1,5 @@
+import csv
+
 def search_customers():
   #opens the CSV file
   CUSTOMERS = open('database_customers.csv','r')
