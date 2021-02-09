@@ -5,6 +5,7 @@ import random
 from colorama import Fore,Style
 from search_customers import search_customers
 from input_data import input_data
+from new_section import new_section
 
 
 #title/header
@@ -13,11 +14,10 @@ print("| 𝙸𝚗𝚜𝚞𝚛𝚊𝚗𝚌𝚎 𝙲𝚘𝚖𝚙𝚊𝚗𝚢 𝙳�
 print("¯" * 30 + "\n\n",Style.RESET_ALL)
 #====================
 def rerun(): #re-runs the program
-  new_section ()
-  search_customers ()
+  new_section()
+  search_customers()
 #====================
-def new_section (): #pattern to make UI split into sections
-  print(Fore.WHITE,Style.BRIGHT,">--------------------<\n",Style.RESET_ALL)
+
 #====================
 def choose_task():
   ask = input("Choose:\n[1] Search database\n[2] Enter Data\n--> ")
@@ -25,7 +25,10 @@ def choose_task():
     search_customers()
   elif ask == '2':
     input_data()
+    new_section()
+    choose_task()
   else:
     choose_task()
 
+# main program
 choose_task()

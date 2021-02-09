@@ -1,4 +1,12 @@
 import csv
+import time
+import random
+from colorama import Fore,Style
+from new_section import new_section
+
+def rerun(): #re-runs the program
+  new_section()
+  search_customers()
 
 def search_customers():
   #opens the CSV file
