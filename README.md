@@ -4,6 +4,6 @@
 
 [![](https://repl.it/badge/github/KennyOliver/searchable-csv)](https://repl.it/@KennyOliver/searchable-csv)
 
-A Python program that can search through a CSV database file!
+Python program that can search through/input data into a CSV database file!
 
 Kenny Oliver ©2021
