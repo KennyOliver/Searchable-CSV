@@ -1,2 +1,3 @@
 language = "python3"
-run = "python main.py"
+run = "pip install colorama ; wait ; python main.py"
+# Use semicolons instead of ampersand because semicolons executes in sequence (even if it fails), and then executes, whilst ampersand executes in parallel
