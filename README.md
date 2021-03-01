@@ -1,4 +1,4 @@
-# Searchable-CSV
+# searchable-csv :mag:
 
 ![image](https://www.codefactor.io/repository/github/KennyOliver/searchable-csv/badge?style=for-the-badge)
 
